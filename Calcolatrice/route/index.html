@@ -2,44 +2,49 @@
 <html>
     <head>
         <title>Calcolatrice</title>
-    </head>
 
-    <body align="center">
-        <h2>CALCOLATRICE</h2>
+        <script type = "text/javascript" language = "javascript">
+            function inserisci(numero) {
+                document.getElementsByName("barra").innerHTML += numero;
+                return true;
+            }
 
-        <div nome="calcolatrice">
-            <form nome="campo1">Campo 1 <input nome="campo1" type="text"> </form>
-            <form nome="campo2">campo 2 <input nome="campo2" type="text"> </form>
-
-            <button nome="somma" onclick=calcola(somma)>+</button>
-            <button nome="sottrazione" onclick=calcola(sottrazione)>-</button>
-            <button nome="moltiplicazione" onclick=calcola(moltiplicazione)>x</button>
-            <button nome="divisione" onclick=calcola(divisione)>:</button>
-            <button nome="reset" onclick=calcola(divisione)>Reset</button>
-
-            <p id="risultato"></p>
-        </div>
-
-        <script>
             function calcola(operazione) {
-                campo1 = document.forms[campo1][campo1].value;
-                campo2 = document.forms[campo1][campo2].value;
-                ris = 0;
+                return true;
+            }
 
-                if (operazione == "somma") {
-                    ris = campo1 + campo2;
-                } else if (operazione == "sottrazione") {
-                    risu = campo1 - campo2;
-                } else if (operazione == "moltiplicazione") {
-                    ris = campo1 * campo2;
-                } else if (operazione == "divisione") {
-                    ris = campo1 / campo2;
-                } else if (operazione == "reset") {
-                    ris = "";
-                }
-
-                document.getElementById("risultato").innerHTML = Risultato + ris;
+            function reset() {
+                document.getElementsByName("barra").innerHTML = "";
+                return true;
             }
         </script>
+    </head>
+
+    <body align = "center">
+        <h2>CALCOLATRICE</h2>
+
+        <form name = "output">
+            <input type = "text" id = "barra" value = "2">
+            <input type = "submit" value = "C" onclick = "reset()">
+        </form> <br>
+        <form name = "numeri">
+            <input type = "submit" value = "1" onclick = "inserisci(1)">
+            <input type = "submit" value = "2" onclick = "inserisci(2)">
+            <input type = "submit" value = "3" onclick = "inserisci(3)"> <br>
+            <input type = "submit" value = "4" onclick = "inserisci(4)">
+            <input type = "submit" value = "5" onclick = "inserisci(5)">
+            <input type = "submit" value = "6" onclick = "inserisci(6)"> <br>
+            <input type = "submit" value = "7" onclick = "inserisci(7)">
+            <input type = "submit" value = "8" onclick = "inserisci(8)">
+            <input type = "submit" value = "9" onclick = "inserisci(9)"> <br>
+            <input type = "submit" value = "0" onclick = "inserisci(0)">
+        </form> <br>
+
+        <form>
+            <input type = "submit" value = "+" onsubmit = "calcola(somma)">
+            <input type = "submit" value = "-" onsubmit = "inserisci(sottrazione)">
+            <input type = "submit" value = "x" onsubmit = "inserisci(moltiplicazione)">
+            <input type = "submit" value = ":" onsubmit = "inserisci(divisione)">
+        </form>
     </body>
 </html>
