@@ -3,19 +3,26 @@
     <head>
         <title>Calcolatrice</title>
 
-        <script type = "text/javascript" language = "javascript">
-            function inserisci(numero) {
-                document.getElementsByName("barra").innerHTML += numero;
-                return true;
+        <script type = "text/javascript" language = "javascript" href="../script/Calcolatrice.js">
+            const calcolatrice = new Calcolatrice();
+
+            function inserisci(valore) {
+                calcolatrice.inserisci(valore);
+                document.getElementById("barra").innerHTML += valore;
             }
 
-            function calcola(operazione) {
-                return true;
+            function segno(valore) {
+                calcolatrice.operazione(valore);
+                document.getElementById("barra").innerHTML += valore;
+            }
+
+            function calcola() {
+                document.getElementById("barra").innerHTML = calcolatrice.calcola();
             }
 
             function reset() {
-                document.getElementsByName("barra").innerHTML = "";
-                return true;
+                calcolatrice.reset();
+                document.getElementById("barra").innerHTML = '';
             }
         </script>
     </head>
@@ -24,27 +31,28 @@
         <h2>CALCOLATRICE</h2>
 
         <form name = "output">
-            <input type = "text" id = "barra" value = "2">
-            <input type = "submit" value = "C" onclick = "reset()">
+            <input type = "text" id = "barra">
+            <input type = "reset" value = "C">
         </form> <br>
         <form name = "numeri">
-            <input type = "submit" value = "1" onclick = "inserisci(1)">
-            <input type = "submit" value = "2" onclick = "inserisci(2)">
-            <input type = "submit" value = "3" onclick = "inserisci(3)"> <br>
-            <input type = "submit" value = "4" onclick = "inserisci(4)">
-            <input type = "submit" value = "5" onclick = "inserisci(5)">
-            <input type = "submit" value = "6" onclick = "inserisci(6)"> <br>
-            <input type = "submit" value = "7" onclick = "inserisci(7)">
-            <input type = "submit" value = "8" onclick = "inserisci(8)">
-            <input type = "submit" value = "9" onclick = "inserisci(9)"> <br>
-            <input type = "submit" value = "0" onclick = "inserisci(0)">
+            <input type = "button" value = "1" onclick = "inserisci('1')">
+            <input type = "button" value = "2" onclick = "inserisci('2')">
+            <input type = "button" value = "3" onclick = "inserisci('3')"> <br>
+            <input type = "button" value = "4" onclick = "inserisci('4')">
+            <input type = "button" value = "5" onclick = "inserisci('5')">
+            <input type = "button" value = "6" onclick = "inserisci('6')"> <br>
+            <input type = "button" value = "7" onclick = "inserisci('7')">
+            <input type = "button" value = "8" onclick = "inserisci('8')">
+            <input type = "button" value = "9" onclick = "inserisci('9')"> <br>
+            <input type = "button" value = "0" onclick = "inserisci('0')">
         </form> <br>
 
         <form>
-            <input type = "submit" value = "+" onsubmit = "calcola(somma)">
-            <input type = "submit" value = "-" onsubmit = "inserisci(sottrazione)">
-            <input type = "submit" value = "x" onsubmit = "inserisci(moltiplicazione)">
-            <input type = "submit" value = ":" onsubmit = "inserisci(divisione)">
+            <input type = "button" value = "+" onsubmit = "segno('+')">
+            <input type = "button" value = "-" onsubmit = "segno('-')">
+            <input type = "button" value = "x" onsubmit = "segno('x')">
+            <input type = "button" value = ":" onsubmit = "segno(':')">
+            <input type = "button" value = "=" onsubmit = "calcola()">
         </form>
     </body>
 </html>
