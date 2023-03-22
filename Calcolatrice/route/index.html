@@ -8,21 +8,24 @@
 
             function inserisci(valore) {
                 calcolatrice.inserisci(valore);
-                document.getElementById("barra").innerHTML += valore;
+                document.getElementById("barra").innerHTML = valore;
             }
 
             function segno(valore) {
                 calcolatrice.operazione(valore);
                 document.getElementById("barra").innerHTML += valore;
+                return;
             }
 
             function calcola() {
                 document.getElementById("barra").innerHTML = calcolatrice.calcola();
+                return;
             }
 
             function reset() {
                 calcolatrice.reset();
                 document.getElementById("barra").innerHTML = '';
+                return;
             }
         </script>
     </head>
@@ -32,8 +35,9 @@
 
         <form name = "output">
             <input type = "text" id = "barra">
-            <input type = "reset" value = "C">
+            <input type = "reset" value = "C" onclick = "reset()">
         </form> <br>
+
         <form name = "numeri">
             <input type = "button" value = "1" onclick = "inserisci('1')">
             <input type = "button" value = "2" onclick = "inserisci('2')">
