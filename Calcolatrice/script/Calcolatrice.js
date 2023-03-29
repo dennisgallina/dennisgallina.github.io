@@ -1,38 +1,46 @@
 class Calcolatrice {
     constructor() {
-      this.numero = 0;
-      this.parziale = 0;
-      this.segno = 0;
-      this.risultato = 0;
+        this.numero = "";
+        this.parziale = "";
+        this.segno = "";
+        this.risultato = "";
     }
 
-    inserisci(valore) {
-        if (segno == 0)
-            this.parziale += valore;
-        else
-            this.numero += valore;
+    inserisci(numero) {
+        this.numero += numero;
+        document.getElementById('barra').value = this.numero;
     }
 
-    operazione(valore) {
-        this.segno = valore;
+    operazione(segno) {
+        this.segno = segno;
+        this.parziale = this.numero;
+        this.numero = "";
+
+        document.getElementById('barra').value = "";
     }
 
     calcola() {
-        if (segno == "+") 
-            risultato = parziale + numero;
-        else if ( segno == "-") 
-            risultato = parziale - numero;
-        else if ( segno == "x") 
-            risultato = parziale * numero;
-        else if ( segno == ":") 
-            risultato = parziale / numero;
-        return risultato;
+        if (this.segno == "+") 
+            this.risultato = parseInt(this.parziale) + parseInt(this.numero);
+        else if (this.segno == "-") 
+            this.risultato = parseInt(this.parziale) - parseInt(this.numero);
+        else if (this.segno == "*") 
+            this.risultato = parseInt(this.parziale) * parseInt(this.numero);
+        else if (this.segno == "/") 
+            this.risultato = parseInt(this.parziale) / parseInt(this.numero);
+
+        document.getElementById('barra').value = this.risultato;
+
+        this.parziale = "";
+        this.numero = this.risultato;
     }
 
     reset() {
-        this.numero = 0;
-        this.parziale = 0;
-        this.segno = 0;
-        this.risultato = 0;
+        this.numero = "";
+        this.parziale = "";
+        this.segno = "";
+        this.risultato = "";
+
+        document.getElementById('barra').value = "";
     }
 }
