@@ -1,0 +1,42 @@
+body {
+    position: relative;
+    background-color: aqua;
+}
+
+input {
+    border-radius: 10%;
+}
+
+input.elimina {
+    background-color: red;
+}
+
+tr.elementoLista {
+    display: none;
+    border-bottom: 1px solid;
+    text-align: center;
+}
+
+tr.elementoLista:hover {
+    width: 110%;
+    height: 110%;
+}
+
+input[type = "button"] {
+    font-weight: bold;
+    text-align: center;
+}
+
+input[type = "button"]:hover {
+    width: 110%;
+    height: 110%;
+}
+
+input[type = "checkbox"]:hover {
+    width: 110%;
+    height: 110%;
+}
+
+tr#selezionati {
+    display: none;
+}
