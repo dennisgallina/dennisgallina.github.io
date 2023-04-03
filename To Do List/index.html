@@ -10,6 +10,8 @@
         <script type = "text/javascript">
             const lista = new Lista();
 
+            aggiornaPagina();
+
             function aggiungi() {
                 // la lista è piena
                 if (lista.getLength() == 10) {
@@ -101,7 +103,7 @@
                 if (document.getElementById('mostraNascondi').value == "NASCONDI ATTIVITA' URGENTI") {
                     for (let i = 0; i < lista.getLength(); i++) {
                         // se l'elemento è in scadenza
-                        if (lista.inScadenza(i) == true) 
+                        if (lista.inScadenza(i) === true) 
                             // lo nasconde
                             document.getElementById('toDo' + i).style.display = "none";
                     }
@@ -112,7 +114,7 @@
                 else {
                     for (let i = 0; i < lista.getLength(); i++) {
                         // se l'elemento è in scadenza
-                        if (lista.inScadenza(i) == true) 
+                        if (lista.inScadenza(i) === true) 
                             // lo mostra
                             document.getElementById('toDo' + i).style.display = "block";
                     }
@@ -168,6 +170,17 @@
 
             // ricarica la pagina
             function aggiornaPagina() {
+                if (lista.getLength() == 0) {
+                    document.getElementById('ordinaData').disabled = true;
+                    document.getElementById('ordinaStato').disabled = true;
+                    document.getElementById('mostraNascondi').disabled = true;
+                }
+                else {
+                    document.getElementById('ordinaData').disabled = false;
+                    document.getElementById('ordinaStato').disabled = false;
+                    document.getElementById('mostraNascondi').disabled = false;
+                }
+
                 for (let i = 0; i < lista.getLength(); i++) {
                     document.getElementById('oggetto' + i).innerHTML = lista.getOggettoToDo(i);
                     document.getElementById('data' + i).innerHTML = lista.getDataToDo(i);
@@ -189,20 +202,21 @@
                 document.getElementById('selezionati').style.display = "none";
                 document.getElementById('aggiungi').style.display = "block";
             }
-
         </script>
     </head>
 
     <body>
+        <h2>TO DO LIST</h2>
+        
         <table>
             <tr id = "ordina">
                 <td class = "ordina">Ordina per</td>
-                <td class = "ordina"><input type = "button" class = "ordina" id = "ordinaStato" value = "STATO" onclick = "visualizzaPerStato()"></td>
-                <td class = "ordina"><input type = "button" class = "ordina" id = "ordinaData" value = "DATA" onclick = "visualizzaPerData()"></td>
+                <td class = "ordina"><input type = "button" class = "ordina" id = "ordinaData" value = "DATA" onclick = "visualizzaPerData()" disabled></td>
+                <td class = "ordina"><input type = "button" class = "ordina" id = "ordinaStato" value = "STATO" onclick = "visualizzaPerStato()" disabled></td>
             </tr>
 
             <tr>
-                <td><input type = "button" id = "mostraNascondi" value = "NASCONDI ATTIVITA' URGENTI" onclick = "mostraNascondiUrgenti()"></td>
+                <td><input type = "button" id = "mostraNascondi" value = "NASCONDI ATTIVITA' URGENTI" onclick = "mostraNascondiUrgenti()" disabled></td>
             </tr>
 
             <tr>
