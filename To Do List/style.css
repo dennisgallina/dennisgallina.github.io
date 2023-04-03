@@ -1,14 +1,6 @@
 body {
     position: relative;
-    background-color: aqua;
-}
-
-input {
-    border-radius: 10%;
-}
-
-input.elimina {
-    background-color: red;
+    background-color: blanchedalmond;
 }
 
 tr.elementoLista {
@@ -18,18 +10,24 @@ tr.elementoLista {
 }
 
 tr.elementoLista:hover {
-    width: 110%;
-    height: 110%;
+    width: 105%;
+    height: 105%;
 }
 
 input[type = "button"] {
     font-weight: bold;
     text-align: center;
+    background-color: white;
 }
 
 input[type = "button"]:hover {
-    width: 110%;
-    height: 110%;
+    width: 105%;
+    height: 105%;
+    background-color: rgb(230, 230, 230);
+}
+
+input.elimina:hover {
+    background-color: red;
 }
 
 input[type = "checkbox"]:hover {
