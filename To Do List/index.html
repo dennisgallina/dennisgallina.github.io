@@ -62,7 +62,7 @@
 
                 for (let i = 0; i < lista.getLength(); i++) {
                     if (document.getElementById('toDo' + i).style.backgroundColor == "rgb(207, 207, 207)") 
-                        elimina(i);
+                        lista.rimuovi(i);
                 }
 
                 aggiornaPagina();
