@@ -7,7 +7,7 @@ public class App {
         MyFile file = new MyFile("Carte.csv");
 
         // importo tutto nel vettore
-        Carta[] carte = new Carta[300];
+        Carta[] carte = new Carta[file.contaCarte()];
         file.importaCSV(carte);
 
         // controllo se ci sono nel file carte mancanti o doppie
@@ -36,6 +36,8 @@ public class App {
 
         // distribuisce le carte ai giocatori
         Giocatore[] giocatori = new Giocatore[nGiocatori];
+        for (int i = 0; i < giocatori.length; i++) 
+            giocatori[i] = new Giocatore("Giocatore " + (i + 1));
         distribuisciCarte(mazzo, giocatori);
 
         // visualizza tutti i mazzi
@@ -70,11 +72,11 @@ public class App {
     }
 
     public static void esportaMazzi(MyCarte mazzo, Giocatore[] giocatori) throws IOException {
-        MyFile carteRimanenti = new MyFile("Mazzo.csv");
+        MyFile carteRimanenti = new MyFile("Mazzo rimanente.csv");
         carteRimanenti.esportaCSV(mazzo);
 
         for (int i = 0; i < giocatori.length; i++) {
-            MyFile mazzoGiocatore = new MyFile("Mazzo " + (i + 1) + ".csv");
+            MyFile mazzoGiocatore = new MyFile(giocatori[i].nome + ".csv");
             mazzoGiocatore.esportaCSV(giocatori[i].mazzo);
         }
     }

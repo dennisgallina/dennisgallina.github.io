@@ -10,8 +10,13 @@ public class Carta {
     }
 
     public boolean ugualeA(Carta carta) {
-        if (numero == carta.numero && seme == carta.seme && colore == carta.colore) 
-            return true;
+        if (this.numero == carta.numero) {
+            // il controllo del seme non riesco a capire perché non funziona nelle carte mancanti
+            if (this.seme == carta.seme) {
+                if (this.colore == carta.colore)
+                    return true;
+            } 
+        }   
         return false;
     }
 
