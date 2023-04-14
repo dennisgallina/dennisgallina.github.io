@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Compila Dati</title>
+        
+        <script type = "text/javascript" language = "javascript">
+            function invia() {
+                if (document.registrazione.cognome.value == "" || document.registrazione.nome.value == "" || document.registrazione.matricola.value == "" || document.registrazione.regione.value == "nessuna") {
+                    document.getElementById("feedback").innerHTML = "COMPILARE TUTTI I CAMPI";
+                    return false;
+                }
+
+                let matricola = parseInt(document.registrazione.matricola.value);
+
+                if (isNaN(matricola)) {
+                    document.getElementById("feedback").innerHTML = "LA MATRICOLA DEVE ESSERE UN NUMERO";
+                    return false;
+                }
+
+                if (document.registrazione.email.value == "" && document.registrazione.telefono.value == "") {
+                    document.getElementById("feedback").innerHTML = "INSERIRE EMAIL O TELEFONO";
+                    return false;
+                }
+
+                document.getElementById("feedback").innerHTML = "TUTTI I CAMPI SONO CORRETTI";
+                return true;
+            }
+        </script>
+    </head>
+
+    <body>
+        <form name = "registrazione" onsubmit = "return invia();">
+            Cognome
+            <input type = "text" name = "cognome" size = "40" maxLength = "40"> <br><br>
+            
+            Nome
+            <input type = "text" name = "nome" size = "30" maxLength = "30"> <br><br>
+            
+            Matricola
+            <input type = "text" name = "matricola" size = "10" maxLength = "12"> <br><br>
+            
+            Regione
+            <select name = "regione">
+                <option value = "nessuna" selected> Seleziona</option>
+                <option value = "valdaosta">Val D'Aosta</option>
+                <option value = "piemonte">Piemonte</option>
+                <option value = "lombardia">Lombardia</option>
+                <option value = "calabria">Calabria</option>
+            </select> <br><br>
+
+            Email*
+            <input type = "email" name = "email" size = "30" maxLength = "30"> <br><br>
+
+            Telefono*
+            <input type = "number" name = "telefono"> <br><br>
+
+            Richieste particolari* <br>
+            <textarea name = "richieste" cols = "60" rows = "6"></textarea>  <br>
+
+            <p id = "feedback"></p>
+
+            <input type = "submit" value = "INVIA"> <br><br>
+
+            <input type = "reset" value = "RESET">
+        </form>
+    </body>
+</html>
