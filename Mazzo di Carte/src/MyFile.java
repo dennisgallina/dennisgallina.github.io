@@ -30,11 +30,11 @@ public class MyFile {
     public void esportaCSV(MyCarte mazzo) throws IOException {
         BufferedWriter bw = new BufferedWriter(new FileWriter(file));
 
-        for (int i = 0; i < mazzo.getSize(); i++) {
-            Carta carta = mazzo.carte.get(i);
+        for (int i = 0; i < mazzo.length(); i++) {
+            Carta carta = mazzo.carta(i);
 
             // se è l'ultimo elemento non crea la linea successiva
-            if (i == mazzo.getSize() - 1)
+            if (i == mazzo.length() - 1)
                 bw.write(carta.numero + "," + carta.seme + "," + carta.colore);
             else {
                 bw.write(carta.numero + "," + carta.seme + "," + carta.colore);

@@ -14,25 +14,25 @@ public class App {
         System.out.println("Nel mazzo ci sono " + file.controlloCarteMancanti(carte) + " carte mancanti");
         System.out.println("Nel mazzo ci sono " + file.controlloCarteDoppie(carte) + " carte doppie");
 
-        // crea il mazzo vero e proprio
+        // crea il mazzo con la dll
         MyCarte mazzo = new MyCarte(carte);
         // mette tutti i jolly
         inserisciJolly(mazzo);
 
         // mischia il mazzo
         System.out.print("Inserire un numero per mischiare il mazzo: ");
-        mazzo.dividi(scanner.nextInt());
+        mazzo.dividi(scanner.nextInt() - 1);
 
         // sovrappone il mazzo dividendolo in due
         System.out.print("Inserire un numero per sovrapporre il mazzo: ");
-        mazzo.sovrapponi(scanner.nextInt());
+        mazzo.sovrapponi(scanner.nextInt() - 1);
 
         // creazione dei giocatori, e controlla che i giocatori non siano troppi per le carte a disposizione
         int nGiocatori = 0;
         do {
             System.out.print("Inserire il numero di giocatori: ");
             nGiocatori = scanner.nextInt();
-        } while (nGiocatori > mazzo.getSize() / 13);
+        } while (nGiocatori > mazzo.length() / 13);
 
         // distribuisce le carte ai giocatori
         Giocatore[] giocatori = new Giocatore[nGiocatori];
@@ -50,10 +50,10 @@ public class App {
     }
 
     public static void inserisciJolly(MyCarte mazzo) {
-        mazzo.inserisci(0, "Jolly", "Blu", 3);
-        mazzo.inserisci(0, "Jolly", "Blu", 22);
-        mazzo.inserisci(0, "Jolly", "Rosso", 60);
-        mazzo.inserisci(0, "Jolly", "Rosso", 77);
+        mazzo.inserisci(0, "Jolly", "Blu", 3 - 1);
+        mazzo.inserisci(0, "Jolly", "Blu", 22 - 1);
+        mazzo.inserisci(0, "Jolly", "Rosso", 60 - 1);
+        mazzo.inserisci(0, "Jolly", "Rosso", 77 - 1);
     }
 
     public static void distribuisciCarte(MyCarte mazzo, Giocatore[] giocatori) {
