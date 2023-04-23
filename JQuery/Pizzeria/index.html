@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pizzeria</title>
+
+        <link rel = "stylesheet" href = "style.css" type = "text/css">
+        <script src = "script/cliente.js" type = "text/javascript"></script>
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> 
+
+        <script type = "text/javascript">
+            const cliente = new Cliente();
+        </script>
+    </head>
+
+    <body>
+        <h2>PIZZERIA</h2>
+        <table>
+            <tr>
+                <td>
+                    <div id = "listaPizze">
+                        <div class = "sceltaPizza" id = "margherita" onclick = "cliente.aggiungiPizza('Margherita')"> <p>Margherita</p></div>
+                        <div class = "sceltaPizza" id = "prosciutto" onclick = "cliente.aggiungiPizza('Prosciutto')"> <p>Prosciutto</p></div>
+                        <div class = "sceltaPizza" id = "patatine" onclick = "cliente.aggiungiPizza('Patatine')"> <p>Patatine</p></div>
+                        <div class = "sceltaPizza" id = "wurstel" onclick = "cliente.aggiungiPizza('Wurstel')"> <p>Wurstel</p></div>
+                        <div class = "sceltaPizza" id = "rucola" onclick = "cliente.aggiungiPizza('Rucola')"> <p>Rucola</p></div>
+                        <div class = "sceltaPizza" id = "salamePiccante" onclick = "cliente.aggiungiPizza('Salame Piccante')"> <p>Salame Piccante</p></div>
+                    </div>
+                </td>
+                <td><img id = "pizzaiolo" src = "images/pizzaiolo.png"></td>
+                <td>
+                    <table id = "carrello">
+                        <td><tr id = "rigaBottone"> <td> <input type = "button" value = "SVUOTA" onclick = "cliente.svuotaCarrello()"></tr></td>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
