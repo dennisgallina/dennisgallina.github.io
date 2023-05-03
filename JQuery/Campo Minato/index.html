@@ -7,14 +7,30 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="script/campo.js" type="text/javascript"></script>
         <script src="script/casella.js" type="text/javascript"></script>
-
-        <script type="text/javascript">
-            const campo = new Campo();
-            campo.genera();
-        </script>
+        <script src="script/partita.js" type="text/javascript"></script>
     </head>
 
     <body>
-        <table id="griglia"></table>
-    </body>
+        <div id="gioco">
+            <select id="numeroCelle" onchange="campo.cambiaNumeroCelle(document.getElementById('numeroCelle').value, document.getElementById('numeroCelle').value)">
+                <option value="10" selected>Facile: 10</option>
+                <option value="15">Medio: 15</option>
+                <option value="20">Difficile 20</option>
+                <option value="30">Esperto: 30</option>
+            </select> 
+    
+            <input type="button" value="START" onclick="partita.inizia()">
+            
+            <br> <br>
+    
+            <div id="griglia"></div>
+        </div>
+    </body> 
+
+    <script type="text/javascript">
+        const partita = new Partita(document.getElementById("numeroCelle").value);
+        const campo = new Campo(document.getElementById("numeroCelle").value, document.getElementById("numeroCelle").value);
+        campo.genera();
+        campo.visualizza();
+    </script>
 </html>
