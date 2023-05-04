@@ -11,26 +11,41 @@
     </head>
 
     <body>
-        <div id="gioco">
-            <select id="numeroCelle" onchange="campo.cambiaNumeroCelle(document.getElementById('numeroCelle').value, document.getElementById('numeroCelle').value)">
-                <option value="10" selected>Facile: 10</option>
-                <option value="15">Medio: 15</option>
-                <option value="20">Difficile 20</option>
-                <option value="30">Esperto: 30</option>
-            </select> 
-    
-            <input type="button" value="START" onclick="partita.inizia()">
-            
-            <br> <br>
-    
-            <div id="griglia"></div>
-        </div>
+        <div id="menu">
+            <img id="bandiera" src="images/bandiera.png"> <p id="bandiereRimaste">10</p>
+        </div> <br>
+
+        <select id="numeroCelle" onchange="campo.cambiaNumeroCelle(document.getElementById('numeroCelle').value, document.getElementById('numeroCelle').value)">
+            <option value="10" selected>Facile: 10</option>
+            <option value="15">Medio: 15</option>
+            <option value="20">Difficile 20</option>
+            <option value="30">Esperto: 30</option>
+        </select> 
+
+        <input id="bottoneStato" type="button" value="PLAY" onclick="partita.cambiaStato()">
+        <br> <br>
+
+        <div id="griglia"></div>
     </body> 
 
     <script type="text/javascript">
-        const partita = new Partita(document.getElementById("numeroCelle").value);
-        const campo = new Campo(document.getElementById("numeroCelle").value, document.getElementById("numeroCelle").value);
-        campo.genera();
-        campo.visualizza();
+        const partita = new Partita();
+        const campo = new Campo(partita, document.getElementById("numeroCelle").value, document.getElementById("numeroCelle").value);
+
+        $("#griglia").click(function(e) {
+            if (partita.esecuzione == true) {
+                let elementoCliccato = $(e.target);
+                campo.scopriCasella(parseInt(elementoCliccato.attr("data-riga")), parseInt(elementoCliccato.attr("data-colonna")));
+            } 
+        });
+
+        $("#griglia").bind('contextmenu', function(e) {
+            e.preventDefault();
+
+            if (partita.esecuzione == true) {
+                let elementoCliccato = $(e.target);
+                campo.assegnaBandiera(parseInt(elementoCliccato.attr("data-riga")), parseInt(elementoCliccato.attr("data-colonna"))); 
+            }
+        });
     </script>
 </html>
