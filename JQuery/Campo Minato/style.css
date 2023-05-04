@@ -1,5 +1,7 @@
 body {
-    background-color: rgb(69, 69, 69);
+    background: rgb(94,93,108);
+    background: linear-gradient(150deg, rgb(99, 96, 145) 0%, rgba(22,22,22,1) 100%);
+    background-attachment: fixed;
     text-align: center;
 }
 
@@ -19,24 +21,32 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 0px;
     position: relative;
+    width: 100%;
 }
 
 .casellaScoperta {
     background-color: rgb(187, 187, 187);
     border: 1px solid white;
     font-family: 'Roboto', sans-serif;
-    font-size: small;
+    font-size:xx-small;
     position: relative;
+    width: 100%;
 }
 
 .casellaBomba {
-    background-color: red;
+    background-color: rgb(187, 187, 187);
+    background-image: url(images/bomba.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
     border: 1px solid white;
-    position: relative;
+    width: 100%;
 }
 
 .casellaBandiera {
-    background-color: yellow;
+    background-color: rgb(187, 187, 187);
+    background-image: url(images/bandiera.png);
+    background-size: contain;
     border: 1px solid white;
-    position: relative;
+    width: 100%;
 }
