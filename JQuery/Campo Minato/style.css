@@ -37,6 +37,7 @@ body {
     background-image: url(images/bomba.png);
     background-position: center;
     background-size: contain;
+    background-repeat: no-repeat;
     border: 1px solid white;
     width: 100%;
 }
@@ -45,6 +46,7 @@ body {
     background-color: rgb(187, 187, 187);
     background-image: url(images/bandiera.png);
     background-size: contain;
+    background-repeat: no-repeat;
     border: 1px solid white;
     width: 100%;
 }
