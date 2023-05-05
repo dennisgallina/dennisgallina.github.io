@@ -16,8 +16,10 @@ class Partita {
             // manda in esecuzione la partita
             this.esecuzione = true;
             document.getElementById("bottoneStato").value = "PAUSE";
-            // non permrtte più la modifica del numero di celle
-            document.getElementById("numeroCelle").style.display = "none";
+            document.getElementById("bottoneReset").value = "FINISH";
+            // non permrtte più la modifica del numero di righe e di bombe
+            document.getElementById("numeroRighe").style.display = "none";
+            document.getElementById("numeroBombe").style.display = "none";
             return;
         }
 
@@ -34,6 +36,11 @@ class Partita {
     termina() {
         this.stato = "terminata";
         this.esecuzione = false;
-        document.getElementById("bottoneStato").value = "FINISH";
+        document.getElementById("bottoneStato").style.display = "none";
+        document.getElementById("bottoneReset").value = "RESET";
+    }
+
+    ricomincia() {
+        location.reload();
     }
 }

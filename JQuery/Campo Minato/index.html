@@ -11,32 +11,34 @@
     </head>
 
     <body>
-        <table align = "center">
-            <tr>
-                <td>
-                    <div id="menu">
-                        <img id="bandiera" src="images/bandiera.png"> <p id="bandiereRimaste">10</p>
+        <div id="gioco" align="center">
+            <div id="menu">
+                <img id="bandiera" src="images/bandiera.png"> <p id="numeroBandiereRimanenti"></p>
+        
+                <select id="numeroRighe" onchange="campo.aggiornaCampo()">
+                    <option value="10" selected>Facile: 10</option>
+                    <option value="15">Medio: 15</option>
+                    <option value="20">Difficile: 20</option>
+                </select> 
+
+                <select id="numeroBombe" onchange="campo.aggiornaCampo()">
+                    <option value="20" selected>Facile: 20</option>
+                    <option value="30">Medio: 30</option>
+                    <option value="40">Difficile: 40</option>
+                    <option value="50">Esperto: 50</option>
+                </select> 
             
-                        <select id="numeroCelle" onchange="campo.cambiaNumeroCelle(document.getElementById('numeroCelle').value, document.getElementById('numeroCelle').value)">
-                            <option value="10" selected>Facile: 10</option>
-                            <option value="15">Medio: 15</option>
-                            <option value="20">Difficile 20</option>
-                            <option value="30">Esperto: 30</option>
-                        </select> 
-                    </div> <br>
+                <input id="bottoneStato" type="button" value="PLAY" onclick="partita.cambiaStato()">
+                <input id="bottoneReset" type="button" value="RESET" onclick="partita.ricomincia()"> <br> <br>
+            </div>
             
-                    <input id="bottoneStato" type="button" value="PLAY" onclick="partita.cambiaStato()">
-                    <br> <br>
-            
-                    <div id="griglia"></div>
-                </td>
-            </tr>
-        </table>
+            <div id="griglia"></div>
+        </div>
     </body> 
 
     <script type="text/javascript">
         const partita = new Partita();
-        const campo = new Campo(partita, document.getElementById("numeroCelle").value, document.getElementById("numeroCelle").value);
+        const campo = new Campo(partita);
 
         $("#griglia").click(function(e) {
             if (partita.esecuzione == true) {
@@ -50,7 +52,7 @@
 
             if (partita.esecuzione == true) {
                 let elementoCliccato = $(e.target);
-                campo.assegnaBandiera(parseInt(elementoCliccato.attr("data-riga")), parseInt(elementoCliccato.attr("data-colonna"))); 
+                campo.aggiungiRimuoviBandiera(parseInt(elementoCliccato.attr("data-riga")), parseInt(elementoCliccato.attr("data-colonna"))); 
             }
         });
     </script>

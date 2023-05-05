@@ -1,30 +1,30 @@
 class Campo {
-    constructor(partita, righe, colonne) {
+    constructor(partita) {
         this.partita = partita;
-        this.righe = righe;
-        this.colonne = colonne;
+        this.righe = parseInt(document.getElementById('numeroRighe').value);
+        this.colonne = this.righe;
         this.caselle = [];
         // numero di bombe presenti nel campo
-        this.numeroBombe = this.righe * 2;
+        this.bombe = parseInt(document.getElementById('numeroBombe').value);
         // numero di bandiere posizionabili dal giocatore
-        this.numeroBandiere = this.numeroBombe;
+        this.numeroBandiereDisponibili = this.bombe;
         this.esplosioneIniziale = false;
 
-        this.genera();
+        this.generaCampo();
     }
 
-    cambiaNumeroCelle(righe, colonne) {
-        this.righe = righe;
-        this.colonne = colonne;
+    aggiornaCampo() {
+        this.righe = parseInt(document.getElementById('numeroRighe').value);
+        this.colonne = this.righe;
         this.caselle = [];
-        this.numeroBombe = this.righe * 2;
-        this.numeroBandiere = this.numeroBombe;
+        this.bombe = parseInt(document.getElementById('numeroBombe').value);
+        this.numeroBandiereDisponibili = this.bombe;
 
-        this.genera();
+        this.generaCampo();
         this.inserisciCelle();
     }
 
-    genera() {
+    generaCampo() {
         // per ogni riga aggiunge un vettore per inserire le caselle
         for (let riga = 0; riga < this.righe; riga++) 
             this.caselle[riga] = [];
@@ -46,11 +46,13 @@ class Campo {
     // assegna le bombe nel campo
     assegnaBombe() {
         // per ogni bomba
-        for (let i = 0; i < this.numeroBombe; i++) {
-            // genera la riga in cui posizionarla
-            let posRigaBomba = Math.floor(Math.random() * (this.righe - 1));
-            // genera la colonna in cui posizionarla
-            let posColonnaBomba = Math.floor(Math.random() * (this.colonne - 1));
+        for (let i = 0; i < this.bombe; i++) {
+            do {
+                // genera la riga in cui posizionarla
+                var posRigaBomba = Math.floor(Math.random() * (this.righe - 1));
+                // genera la colonna in cui posizionarla
+                var posColonnaBomba = Math.floor(Math.random() * (this.colonne - 1));
+            } while (this.caselle[posRigaBomba][posColonnaBomba].contenuto == "bomba");
             // la posiziona
             this.caselle[posRigaBomba][posColonnaBomba].contenuto = "bomba";
         }
@@ -294,18 +296,31 @@ class Campo {
         }
     }
 
-    assegnaBandiera(riga, colonna) {
-        if (this.numeroBandiere == 0) 
+    aggiungiRimuoviBandiera(riga, colonna) {
+        if (this.caselle[riga][colonna].stato == "bandiera") {
+            this.caselle[riga][colonna].stato = "coperta";
+            // cambia la grafica della casella
+            $('.casellaBandiera[data-riga=' + riga+ '][data-colonna=' + colonna + ']').addClass("casellaCoperta");
+            $('.casellaBandiera[data-riga=' + riga+ '][data-colonna=' + colonna + ']').removeClass("casellaBandiera");
+            // aggiorna il contatore delle bandiere
+            this.numeroBandiereDisponibili++;
+            document.getElementById("numeroBandiereRimanenti").innerHTML = this.numeroBandiereDisponibili;
+            return;
+        }
+
+        if (this.numeroBandiereDisponibili == 0) 
             return;
 
         if (this.caselle[riga][colonna].stato == "coperta") {
             this.caselle[riga][colonna].stato = "bandiera";
+            // cambia la grafica della casella
             $('.casellaCoperta[data-riga=' + riga+ '][data-colonna=' + colonna + ']').addClass("casellaBandiera");
             $('.casellaCoperta[data-riga=' + riga+ '][data-colonna=' + colonna + ']').removeClass("casellaCoperta");
-            this.numeroBandiere--;
+            // aggiorna il contatore delle bandiere
+            this.numeroBandiereDisponibili--;
+            document.getElementById("numeroBandiereRimanenti").innerHTML = this.numeroBandiereDisponibili;
+            return;
         }
-
-        document.getElementById("bandiereRimaste").innerHTML = this.numeroBandiere;
     }
 
     visualizza() {
@@ -313,7 +328,7 @@ class Campo {
         document.getElementById("griglia").style.height = (30 * this.righe) + "px";
 
         $("#griglia").empty();
-        document.getElementById("griglia").style.gridTemplateColumns = " auto";
+        document.getElementById("griglia").style.gridTemplateColumns = "";
 
         // per ogni riga
         for (let riga = 0; riga < this.righe; riga++) {
@@ -325,9 +340,8 @@ class Campo {
                 else
                     $("#griglia").append("<div class='casellaCoperta' data-riga='" + riga + "' data-colonna='" + colonna + "'>" + this.caselle[riga][colonna].bombeAdiacenti + "</div>");
             }
-            // va a capo a fine riga
-            $("#griglia").append("<br>");
             document.getElementById("griglia").style.gridTemplateColumns += " auto";
+            document.getElementById("numeroBandiereRimanenti").innerHTML = this.numeroBandiereDisponibili;
         }
     }
 }
