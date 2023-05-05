@@ -11,8 +11,6 @@ body {
 
 #griglia {
     display: grid;
-    position: relative;
-    left: 33%;
 }
 
 .casellaCoperta {

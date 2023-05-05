@@ -11,21 +11,27 @@
     </head>
 
     <body>
-        <div id="menu">
-            <img id="bandiera" src="images/bandiera.png"> <p id="bandiereRimaste">10</p>
-
-            <select id="numeroCelle" onchange="campo.cambiaNumeroCelle(document.getElementById('numeroCelle').value, document.getElementById('numeroCelle').value)">
-                <option value="10" selected>Facile: 10</option>
-                <option value="15">Medio: 15</option>
-                <option value="20">Difficile 20</option>
-                <option value="30">Esperto: 30</option>
-            </select> 
-        </div> <br>
-
-        <input id="bottoneStato" type="button" value="PLAY" onclick="partita.cambiaStato()">
-        <br> <br>
-
-        <div id="griglia"></div>
+        <table align = "center">
+            <tr>
+                <td>
+                    <div id="menu">
+                        <img id="bandiera" src="images/bandiera.png"> <p id="bandiereRimaste">10</p>
+            
+                        <select id="numeroCelle" onchange="campo.cambiaNumeroCelle(document.getElementById('numeroCelle').value, document.getElementById('numeroCelle').value)">
+                            <option value="10" selected>Facile: 10</option>
+                            <option value="15">Medio: 15</option>
+                            <option value="20">Difficile 20</option>
+                            <option value="30">Esperto: 30</option>
+                        </select> 
+                    </div> <br>
+            
+                    <input id="bottoneStato" type="button" value="PLAY" onclick="partita.cambiaStato()">
+                    <br> <br>
+            
+                    <div id="griglia"></div>
+                </td>
+            </tr>
+        </table>
     </body> 
 
     <script type="text/javascript">
