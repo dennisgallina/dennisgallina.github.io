@@ -21,16 +21,12 @@ class Partita {
             return;
         }
 
-        // se è in esecuzione
-        if (this.esecuzione == true) {
-            // la mette in pausa
+        // se è in esecuzione la mette in pausa
+        if (this.esecuzione == true) 
             document.getElementById("bottoneStato").value = "PLAY";
-        } 
-        // se è in pausa
-        else if (this.esecuzione == false) {
-            // riprende la partita
+        // se è in pausa, riprende la partita
+        else if (this.esecuzione == false) 
             document.getElementById("bottoneStato").value = "PAUSE";
-        }
 
         this.esecuzione = !this.esecuzione;
     }
