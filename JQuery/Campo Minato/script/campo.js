@@ -118,8 +118,7 @@ class Campo {
             // per ogni elemento della riga
             for (let colonna = 0; colonna < this.colonne; colonna++) {
                 if (this.caselle[riga][colonna].contenuto == "bomba") {
-                    $('.casellaCoperta[data-riga=' + riga+ '][data-colonna=' + colonna + ']').addClass("casellaBomba");
-                    $('.casellaCoperta[data-riga=' + riga+ '][data-colonna=' + colonna + ']').removeClass("casellaCoperta");
+                    this.scopriCasella(riga, colonna);
                 }
             }
         }
@@ -135,6 +134,7 @@ class Campo {
             else
                 trovataBomba = true;
         }
+        
         // controllo angolo alto dx
         if (riga - 1 > -1 && colonna + 1 < this.colonne) {
             if (this.caselle[riga - 1][colonna + 1].contenuto != "bomba")
@@ -272,21 +272,20 @@ class Campo {
     }
 
     scopriCasella(riga, colonna) {
+        // se è già stata cliccata non cambia nulla
         if (this.caselle[riga][colonna].stato == "scoperta")
             return;
-
+        // se è scoperta la scopre
         if (this.caselle[riga][colonna].stato == "coperta") {
             this.caselle[riga][colonna].stato = "scoperta";
-
+            // aggiorna il campo
+            this.visualizza();
+            // se la casella scoperta è una bomba
             if (this.caselle[riga][colonna].contenuto == "bomba") {
-                $('.casellaCoperta[data-riga=' + riga+ '][data-colonna=' + colonna + ']').addClass("casellaBomba");
-                $('.casellaCoperta[data-riga=' + riga+ '][data-colonna=' + colonna + ']').removeClass("casellaCoperta");
                 this.scopriCaselleBombe();
+                this.visualizza();
                 this.partita.termina();
                 return;
-            } else {
-                $('.casellaCoperta[data-riga=' + riga+ '][data-colonna=' + colonna + ']').addClass("casellaScoperta");
-                $('.casellaCoperta[data-riga=' + riga+ '][data-colonna=' + colonna + ']').removeClass("casellaCoperta");
             }
         }
 
@@ -299,28 +298,20 @@ class Campo {
     aggiungiRimuoviBandiera(riga, colonna) {
         if (this.caselle[riga][colonna].stato == "bandiera") {
             this.caselle[riga][colonna].stato = "coperta";
-            // cambia la grafica della casella
-            $('.casellaBandiera[data-riga=' + riga+ '][data-colonna=' + colonna + ']').addClass("casellaCoperta");
-            $('.casellaBandiera[data-riga=' + riga+ '][data-colonna=' + colonna + ']').removeClass("casellaBandiera");
             // aggiorna il contatore delle bandiere
             this.numeroBandiereDisponibili++;
-            document.getElementById("numeroBandiereRimanenti").innerHTML = this.numeroBandiereDisponibili;
-            $("#numeroBandiereRimanenti").append("  <img id='bandiera' src='images/bandiera.png'>")
+            this.visualizza();
             return;
         }
 
-        if (this.numeroBandiereDisponibili == 0) 
+        if (this.numeroBandiereDisponibili == 0)
             return;
 
         if (this.caselle[riga][colonna].stato == "coperta") {
             this.caselle[riga][colonna].stato = "bandiera";
-            // cambia la grafica della casella
-            $('.casellaCoperta[data-riga=' + riga+ '][data-colonna=' + colonna + ']').addClass("casellaBandiera");
-            $('.casellaCoperta[data-riga=' + riga+ '][data-colonna=' + colonna + ']').removeClass("casellaCoperta");
             // aggiorna il contatore delle bandiere
             this.numeroBandiereDisponibili--;
-            document.getElementById("numeroBandiereRimanenti").innerHTML = this.numeroBandiereDisponibili;
-            $("#numeroBandiereRimanenti").append("  <img id='bandiera' src='images/bandiera.png'>")
+            this.visualizza();
             return;
         }
     }
@@ -336,15 +327,30 @@ class Campo {
         for (let riga = 0; riga < this.righe; riga++) {
             // per ogni elemento della riga
             for (let colonna = 0; colonna < this.colonne; colonna++) {
-                // visualizza casella
-                if (this.caselle[riga][colonna].bombeAdiacenti == 0 || this.caselle[riga][colonna].contenuto == "bomba")
+                // aggiorna la grafica della casella
+                if (this.caselle[riga][colonna].stato == "coperta")
                     $("#griglia").append("<div class='casellaCoperta' data-riga='" + riga + "' data-colonna='" + colonna + "'></div>");
-                else
-                    $("#griglia").append("<div class='casellaCoperta' data-riga='" + riga + "' data-colonna='" + colonna + "'>" + this.caselle[riga][colonna].bombeAdiacenti + "</div>");
+                else if (this.caselle[riga][colonna].stato == "scoperta" && this.caselle[riga][colonna].contenuto != "bomba") {
+                    if (this.caselle[riga][colonna].bombeAdiacenti == 0) 
+                        $("#griglia").append("<div class='casellaScoperta' data-riga='" + riga + "' data-colonna='" + colonna + "'></div>");
+                    else
+                        $("#griglia").append("<div class='casellaScoperta' data-riga='" + riga + "' data-colonna='" + colonna + "'><p id='bombeAdiacenti'>" + this.caselle[riga][colonna].bombeAdiacenti + "</p></div>");
+                } else if (this.caselle[riga][colonna].stato == "scoperta" && this.caselle[riga][colonna].contenuto == "bomba")
+                    $("#griglia").append("<div class='casellaBomba' data-riga='" + riga + "' data-colonna='" + colonna + "'></div>");
+                else if (this.caselle[riga][colonna].stato == "bandiera")
+                    $("#griglia").append("<div class='casellaBandiera' data-riga='" + riga + "' data-colonna='" + colonna + "'></div>");
             }
+
             document.getElementById("griglia").style.gridTemplateColumns += " auto";
-            document.getElementById("numeroBandiereRimanenti").innerHTML = this.numeroBandiereDisponibili;
-            $("#numeroBandiereRimanenti").append("  <img id='bandiera' src='images/bandiera.png'>")
+
+            if (this.numeroBandiereDisponibili == 0) {
+                document.getElementById("numeroBandiereRimanenti").innerHTML = "Bandiere terminate!";
+                $("#numeroBandiereRimanenti").append(" <img id='bandiera' src='images/bandiera.png'>")
+            }
+            else {
+                document.getElementById("numeroBandiereRimanenti").innerHTML = this.numeroBandiereDisponibili;
+                $("#numeroBandiereRimanenti").append(" <img id='bandiera' src='images/bandiera.png'>")
+            }
         }
     }
 }

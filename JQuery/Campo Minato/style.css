@@ -14,11 +14,15 @@ body {
     display: grid;
 }
 
+#bombeAdiacenti {
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    left: 40%;
+}
+
 .casellaCoperta {
     background-color: grey;
     border: 1px solid white;
-    font-family: 'Roboto', sans-serif;
-    font-size: 0px;
     position: relative;
     width: 100%;
 }
@@ -26,8 +30,6 @@ body {
 .casellaScoperta {
     background-color: rgb(187, 187, 187);
     border: 1px solid white;
-    font-family: 'Roboto', sans-serif;
-    font-size:xx-small;
     position: relative;
     width: 100%;
 }
