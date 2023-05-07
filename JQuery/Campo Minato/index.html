@@ -13,7 +13,7 @@
     <body>
         <div id="gioco" align="center">
             <div id="menu">
-                <img id="bandiera" src="images/bandiera.png"> <p id="numeroBandiereRimanenti"></p>
+                <p id="numeroBandiereRimanenti"><img id="bandiera" src="images/bandiera.png"></p>
         
                 <select id="numeroRighe" onchange="campo.aggiornaCampo()">
                     <option value="10" selected>Facile: 10</option>
@@ -28,7 +28,7 @@
                     <option value="50">Esperto: 50</option>
                 </select> 
             
-                <input id="bottoneStato" type="button" value="PLAY" onclick="partita.cambiaStato()">
+                <input id="bottoneStato" type="button" value="START" onclick="partita.cambiaStato()">
                 <input id="bottoneReset" type="button" value="RESET" onclick="partita.ricomincia()"> <br> <br>
             </div>
             

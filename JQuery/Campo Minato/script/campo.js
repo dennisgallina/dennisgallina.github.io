@@ -305,6 +305,7 @@ class Campo {
             // aggiorna il contatore delle bandiere
             this.numeroBandiereDisponibili++;
             document.getElementById("numeroBandiereRimanenti").innerHTML = this.numeroBandiereDisponibili;
+            $("#numeroBandiereRimanenti").append("  <img id='bandiera' src='images/bandiera.png'>")
             return;
         }
 
@@ -319,6 +320,7 @@ class Campo {
             // aggiorna il contatore delle bandiere
             this.numeroBandiereDisponibili--;
             document.getElementById("numeroBandiereRimanenti").innerHTML = this.numeroBandiereDisponibili;
+            $("#numeroBandiereRimanenti").append("  <img id='bandiera' src='images/bandiera.png'>")
             return;
         }
     }
@@ -342,6 +344,7 @@ class Campo {
             }
             document.getElementById("griglia").style.gridTemplateColumns += " auto";
             document.getElementById("numeroBandiereRimanenti").innerHTML = this.numeroBandiereDisponibili;
+            $("#numeroBandiereRimanenti").append("  <img id='bandiera' src='images/bandiera.png'>")
         }
     }
 }
