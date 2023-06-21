@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Campo Minato</title>
+
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="script/campo.js" type="text/javascript"></script>
+        <script src="script/casella.js" type="text/javascript"></script>
+        <script src="script/partita.js" type="text/javascript"></script>
+    </head>
+
+    <body>
+        <div id="gioco" align="center">
+            <div id="menu">
+                <p id="numeroBandiereRimanenti"><img id="bandiera" src="images/bandiera.png"></p>
+        
+                <div id="personalizzazione">
+                    <label for="numeroRighe">Numero di righe</label>
+                <select id="numeroRighe" onchange="campo.aggiornaCampo()">
+                    <option value="10" selected>Facile: 10</option>
+                    <option value="15">Medio: 15</option>
+                    <option value="20">Difficile: 20</option>
+                </select> <br>
+
+                <label for="numeroBombe">Numero di bombe</label>
+                <select id="numeroBombe" onchange="campo.aggiornaCampo()">
+                    <option value="20" selected>Facile: 20</option>
+                    <option value="30">Medio: 30</option>
+                    <option value="40">Difficile: 40</option>
+                    <option value="50">Esperto: 50</option>
+                </select> <br> <br>
+                </div>
+            
+                <input id="bottoneStato" type="button" value="START" onclick="partita.cambiaStato()">
+                <input id="bottoneReset" type="button" value="RESET" onclick="partita.ricomincia()"> <br> <br>
+            </div>
+            
+            <div id="griglia"></div>
+        </div>
+    </body> 
+
+    <script type="text/javascript">
+        const partita = new Partita();
+        const campo = new Campo(partita);
+
+        $("#griglia").click(function(e) {
+            if (partita.esecuzione == true) {
+                let elementoCliccato = $(e.target);
+                campo.scopriCasella(parseInt(elementoCliccato.attr("data-riga")), parseInt(elementoCliccato.attr("data-colonna")));
+            } 
+        });
+
+        $("#griglia").bind('contextmenu', function(e) {
+            e.preventDefault();
+
+            if (partita.esecuzione == true) {
+                let elementoCliccato = $(e.target);
+                campo.aggiungiRimuoviBandiera(parseInt(elementoCliccato.attr("data-riga")), parseInt(elementoCliccato.attr("data-colonna"))); 
+            }
+        });
+    </script>
+</html>

@@ -1,0 +1,39 @@
+h2 {
+    font-size: 50px;
+    text-align: center;
+}
+
+#listaPizze {
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 10%;
+}
+
+.sceltaPizza {
+    background-image:url("images/pizza.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: top;
+    font-size: 25px;
+    border: 1px solid black;
+    border-radius: 20px;
+    border-right-color: black;
+    border-bottom-color: black;
+    text-align: center;
+    width: 200px;
+    height: 100px;
+}
+
+.sceltaPizza:hover {
+    border: 2px solid black;
+}
+
+#pizzaiolo {
+    vertical-align: top;
+    text-align: center;
+}
+
+.pizza, .numero, .tipoPizza {
+    border: 1px solid black;
+    border-collapse: collapse;
+}

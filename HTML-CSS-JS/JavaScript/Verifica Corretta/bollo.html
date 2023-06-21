@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href = "style.css" rel = "stylesheet" type = "text/css">
+        <script src = "script/bollo.js" type = text/javascript></script>
+    </head>
+
+    <body>
+        <form name = "bollo">
+            <p>Tipologia del veicolo</p>
+            <select name = "tipologia">
+                <option name = "nessuna" selected>-</option>
+                <option name = "auto">Auto</option>
+                <option name = "moto">Moto</option>
+                <option name = "autobus">Autobus</option>
+            </select>
+
+            <p>Numero di telaio</p> <input type = "number" name = "telaio">
+
+            <p>Tipo di carbutrante</p>
+            <select name = "carburante">
+                <option name = "nessuna" selected>-</option>
+                <option name = "benzina">Benzina</option>
+                <option name = "diesel">Diesel</option>
+                <option name = "ibrida">Ibrida</option>
+                <option name = "elettrica">Elettrica</option>
+            </select>
+
+            <p>Cavalli</p> <input type = "number" name = "cavalli"> <br> <br>
+
+            <input type = "button" value = "CALCOLA" onclick = "calcola()">
+        </form>
+
+        <p id = "calcolo"></p>
+        <img id = "errore" src = "">
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quiz</title>
+
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="script/quiz.js" type="text/javascript"></script>
+        <script src="script/quesito.js" type="text/javascript"></script>
+    </head>
+
+    <body>
+        <h2 align="center">QUIZ</h2>
+        <div id="quiz" align="center"></div>
+    </body>
+
+    <script>
+        const quiz = new Quiz();
+        quiz.aggiungi("Qual è la capitale d'Italia?", "Roma", "Milano", "Firenze", "Palermo", 1);
+        quiz.aggiungi("Qual è il linguaggio utilizzato per i siti web?", "C#", "Java", "Arduino", "HTML/CSS", 4);
+        quiz.aggiungi("Quanti giorni ci sono in un anno?", "265", "365", "367", "375", 2);
+        quiz.aggiungi("Chi guidò la spedizione dei Mille?", "Napoleone III", "Cavour", "Garibaldi", "Mazzini", 3);
+
+        quiz.visualizza();
+    </script>
+</html>

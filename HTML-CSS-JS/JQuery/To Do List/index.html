@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Campo Minato</title>
+
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="script/Lista.js"></script>
+        <script src="script/ToDo.js"></script>
+    </head>
+
+    <body id="body">
+        <div id="menù">
+            <div id="ordina">
+                <input type = "button" class = "ordina" id = "ordinaData" value = "ORDINA PER DATA" onclick = "visualizzaPerData()" disabled>
+                <input type = "button" class = "ordina" id = "ordinaStato" value = "ORDINA PER STATO" onclick = "visualizzaPerStato()" disabled>
+            </div>
+
+            <input type = "button" id = "mostraNascondi" value = "NASCONDI ATTIVITA' URGENTI" onclick = "mostraNascondiUrgenti()" disabled>
+
+            <div id="aggiungi">
+                <input type = "text" id = "oggetto">
+                <input type = "date" id = "data">
+                <input type = "button" id = "aggiungi" value = "AGGIUNGI" onclick = "aggiungi()">
+            </div>
+        </div>
+    </body>
+
+    <script>
+        const lista = new Lista();
+    </script>
+</html>
