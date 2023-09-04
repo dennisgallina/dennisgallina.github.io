@@ -1,0 +1,77 @@
+C:\Users\denni\Desktop\Visualizzatore Visio\Visualizzatore Visio\bin\Release\Visualizzatore Visio.exe.config
+C:\Users\denni\Desktop\Visualizzatore Visio\Visualizzatore Visio\bin\Release\Visualizzatore Visio.exe
+C:\Users\denni\Desktop\Visualizzatore Visio\Visualizzatore Visio\bin\Release\Visualizzatore Visio.pdb
+C:\Users\denni\Desktop\Visualizzatore Visio\Visualizzatore Visio\bin\Release\Aspose.Diagram.dll
+C:\Users\denni\Desktop\Visualizzatore Visio\Visualizzatore Visio\bin\Release\System.Drawing.Common.dll
+C:\Users\denni\Desktop\Visualizzatore Visio\Visualizzatore Visio\bin\Release\Aspose.Diagram.xml
+C:\Users\denni\Desktop\Visualizzatore Visio\Visualizzatore Visio\bin\Release\System.Drawing.Common.xml
+C:\Users\denni\OneDrive\Visualizzatore Visio\Visualizzatore Visio\bin\Debug\Visualizzatore Visio.exe.config
+C:\Users\denni\OneDrive\Visualizzatore Visio\Visualizzatore Visio\bin\Debug\Visualizzatore Visio.exe
+C:\Users\denni\OneDrive\Visualizzatore Visio\Visualizzatore Visio\bin\Debug\Visualizzatore Visio.pdb
+C:\Users\denni\OneDrive\Visualizzatore Visio\Visualizzatore Visio\bin\Debug\Aspose.Diagram.dll
+C:\Users\denni\OneDrive\Visualizzatore Visio\Visualizzatore Visio\bin\Debug\System.Drawing.Common.dll
+C:\Users\denni\OneDrive\Visualizzatore Visio\Visualizzatore Visio\bin\Debug\Aspose.Diagram.xml
+C:\Users\denni\OneDrive\Visualizzatore Visio\Visualizzatore Visio\bin\Debug\System.Drawing.Common.xml
+C:\Users\denni\OneDrive\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\Visualizzatore Visio.csproj.AssemblyReference.cache
+C:\Users\denni\OneDrive\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\Visualizzatore Visio.csproj.SuggestedBindingRedirects.cache
+C:\Users\denni\OneDrive\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\MainWindow.g.cs
+C:\Users\denni\OneDrive\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\App.g.cs
+C:\Users\denni\OneDrive\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\Visualizzatore Visio_MarkupCompile.cache
+C:\Users\denni\OneDrive\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\Visualizzatore Visio_MarkupCompile.lref
+C:\Users\denni\OneDrive\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\MainWindow.baml
+C:\Users\denni\OneDrive\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\Visualizzatore Visio.g.resources
+C:\Users\denni\OneDrive\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\Visualizzatore_Visio.Properties.Resources.resources
+C:\Users\denni\OneDrive\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\Visualizzatore Visio.csproj.GenerateResource.cache
+C:\Users\denni\OneDrive\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\Visualizzatore Visio.csproj.CoreCompileInputs.cache
+C:\Users\denni\OneDrive\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\Visualizzatore Visio.csproj.CopyComplete
+C:\Users\denni\OneDrive\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\Visualizzatore Visio.exe
+C:\Users\denni\OneDrive\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\Visualizzatore Visio.pdb
+C:\Users\denni\Desktop\Visualizzatore Visio\Visualizzatore Visio\bin\Debug\Visualizzatore Visio.exe.config
+C:\Users\denni\Desktop\Visualizzatore Visio\Visualizzatore Visio\bin\Debug\Visualizzatore Visio.exe
+C:\Users\denni\Desktop\Visualizzatore Visio\Visualizzatore Visio\bin\Debug\Visualizzatore Visio.pdb
+C:\Users\denni\Desktop\Visualizzatore Visio\Visualizzatore Visio\bin\Debug\Aspose.Diagram.dll
+C:\Users\denni\Desktop\Visualizzatore Visio\Visualizzatore Visio\bin\Debug\System.Drawing.Common.dll
+C:\Users\denni\Desktop\Visualizzatore Visio\Visualizzatore Visio\bin\Debug\Aspose.Diagram.xml
+C:\Users\denni\Desktop\Visualizzatore Visio\Visualizzatore Visio\bin\Debug\System.Drawing.Common.xml
+C:\Users\denni\Desktop\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\Visualizzatore Visio.csproj.AssemblyReference.cache
+C:\Users\denni\Desktop\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\Visualizzatore Visio.csproj.SuggestedBindingRedirects.cache
+C:\Users\denni\Desktop\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\MainWindow.g.cs
+C:\Users\denni\Desktop\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\App.g.cs
+C:\Users\denni\Desktop\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\Visualizzatore Visio_MarkupCompile.cache
+C:\Users\denni\Desktop\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\Visualizzatore Visio_MarkupCompile.lref
+C:\Users\denni\Desktop\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\MainWindow.baml
+C:\Users\denni\Desktop\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\Visualizzatore Visio.g.resources
+C:\Users\denni\Desktop\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\Visualizzatore_Visio.Properties.Resources.resources
+C:\Users\denni\Desktop\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\Visualizzatore Visio.csproj.GenerateResource.cache
+C:\Users\denni\Desktop\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\Visualizzatore Visio.csproj.CoreCompileInputs.cache
+C:\Users\denni\Desktop\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\Visualizzatore Visio.csproj.CopyComplete
+C:\Users\denni\Desktop\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\Visualizzatore Visio.exe
+C:\Users\denni\Desktop\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\Visualizzatore Visio.pdb
+C:\Users\denni\Desktop\Visualizzatore Visio\Visualizzatore Visio\bin\Visualizzatore Visio\Visualizzatore Visio.exe.config
+C:\Users\denni\Desktop\Visualizzatore Visio\Visualizzatore Visio\bin\Visualizzatore Visio\Visualizzatore Visio.exe
+C:\Users\denni\Desktop\Visualizzatore Visio\Visualizzatore Visio\bin\Visualizzatore Visio\Visualizzatore Visio.pdb
+C:\Users\denni\Desktop\Visualizzatore Visio\Visualizzatore Visio\bin\Visualizzatore Visio\Aspose.Diagram.dll
+C:\Users\denni\Desktop\Visualizzatore Visio\Visualizzatore Visio\bin\Visualizzatore Visio\System.Drawing.Common.dll
+C:\Users\denni\Desktop\Visualizzatore Visio\Visualizzatore Visio\bin\Visualizzatore Visio\Aspose.Diagram.xml
+C:\Users\denni\Desktop\Visualizzatore Visio\Visualizzatore Visio\bin\Visualizzatore Visio\System.Drawing.Common.xml
+C:\Users\denni\OneDrive\STT\Visualizzatore Visio\Visualizzatore Visio\bin\Visualizzatore Visio\Visualizzatore Visio.exe.config
+C:\Users\denni\OneDrive\STT\Visualizzatore Visio\Visualizzatore Visio\bin\Visualizzatore Visio\Visualizzatore Visio.exe
+C:\Users\denni\OneDrive\STT\Visualizzatore Visio\Visualizzatore Visio\bin\Visualizzatore Visio\Visualizzatore Visio.pdb
+C:\Users\denni\OneDrive\STT\Visualizzatore Visio\Visualizzatore Visio\bin\Visualizzatore Visio\Aspose.Diagram.dll
+C:\Users\denni\OneDrive\STT\Visualizzatore Visio\Visualizzatore Visio\bin\Visualizzatore Visio\System.Drawing.Common.dll
+C:\Users\denni\OneDrive\STT\Visualizzatore Visio\Visualizzatore Visio\bin\Visualizzatore Visio\Aspose.Diagram.xml
+C:\Users\denni\OneDrive\STT\Visualizzatore Visio\Visualizzatore Visio\bin\Visualizzatore Visio\System.Drawing.Common.xml
+C:\Users\denni\OneDrive\STT\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\Visualizzatore Visio.csproj.AssemblyReference.cache
+C:\Users\denni\OneDrive\STT\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\Visualizzatore Visio.csproj.SuggestedBindingRedirects.cache
+C:\Users\denni\OneDrive\STT\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\MainWindow.g.cs
+C:\Users\denni\OneDrive\STT\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\App.g.cs
+C:\Users\denni\OneDrive\STT\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\Visualizzatore Visio_MarkupCompile.cache
+C:\Users\denni\OneDrive\STT\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\Visualizzatore Visio_MarkupCompile.lref
+C:\Users\denni\OneDrive\STT\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\MainWindow.baml
+C:\Users\denni\OneDrive\STT\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\Visualizzatore Visio.g.resources
+C:\Users\denni\OneDrive\STT\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\Visualizzatore_Visio.Properties.Resources.resources
+C:\Users\denni\OneDrive\STT\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\Visualizzatore Visio.csproj.GenerateResource.cache
+C:\Users\denni\OneDrive\STT\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\Visualizzatore Visio.csproj.CoreCompileInputs.cache
+C:\Users\denni\OneDrive\STT\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\Visualizzatore Visio.csproj.CopyComplete
+C:\Users\denni\OneDrive\STT\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\Visualizzatore Visio.exe
+C:\Users\denni\OneDrive\STT\Visualizzatore Visio\Visualizzatore Visio\obj\Debug\Visualizzatore Visio.pdb

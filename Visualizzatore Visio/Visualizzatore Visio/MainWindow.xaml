@@ -1,0 +1,31 @@
+﻿<Window x:Class="Visualizzatore_Visio.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Visualizzatore_Visio"
+        mc:Ignorable="d"
+        Title="Visualizzatore Visio" Height="450" Width="700">
+    <Grid>
+        <Label Content="Visualizzatore Visio" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="48" FontWeight="Bold"/>
+        <Button x:Name="btnSfoglia" Content="SFOGLIA" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="30" FontWeight="Bold" Click="btnSfoglia_Click" Width="150" Height="50" Margin="0,180,0,0" BorderBrush="Black" Background="#FFEDEDED"/>
+        <Button x:Name="btnVisualizza" Content="VISUALIZZA" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="30" FontWeight="Bold" Click="btnVisualizza_Click" Width="193" Height="50" Margin="157,117,0,0" BorderBrush="Black" Background="#FF14BDE2"/>
+        <ComboBox x:Name="cmbBoxDiagramImages" HorizontalAlignment="Center" Margin="0,246,0,0" VerticalAlignment="Top" Width="284">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FFF0F0F0"/>
+                    <GradientStop Color="#FFEDEDED" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+        </ComboBox>
+        <Label x:Name="lblMessage" Content="" HorizontalAlignment="Center" Margin="0,273,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnElimina" Content="ELIMINA" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="30" FontWeight="Bold" Click="btnElimina_Click" Margin="355,117,0,0" BorderBrush="Black" Background="#FFF63838" Height="50" Width="152"/>
+        <Button x:Name="btnSalva" Content="SALVA" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="30" FontWeight="Bold" Click="btnSalva_Click" Width="150" Height="50" Margin="0,180,0,0" BorderBrush="Black" BorderThickness="2,2,2,2" Background="#FFEDEDED" Visibility="Collapsed"/>
+        <Button x:Name="btnRicarica" Content="" HorizontalAlignment="Left" Margin="431,190,0,0" VerticalAlignment="Top" Click="btnRicarica_Click" Height="30" Width="30" ToolTip="Ricarica la pagina">
+            <Button.Background>
+                <ImageBrush ImageSource="/ricarica.jpg" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</Window>
