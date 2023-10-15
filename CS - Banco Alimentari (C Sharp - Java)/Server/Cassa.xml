@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cassieri>
+    <cassiere>
+        <id>1</id>
+    </cassiere>
+    <cassiere>
+        <id>3</id>
+    </cassiere>
+    <!-- Aggiungi altri cassieri qui -->
+</cassieri>

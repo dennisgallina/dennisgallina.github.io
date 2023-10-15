@@ -1,0 +1,17 @@
+<storicoScontrini>
+    <scontrino>
+        <id>1</id>
+        <idCassiere>101</idCassiere>
+        <totale>8</totale>
+        <prodotto>
+            <id>1</id>
+            <nome>Pasta</nome>
+            <prezzoAlChilo>250</prezzoAlChilo>
+            <quantità>50</quantità>
+        </prodotto>
+        <id>2</id>
+        <nome>Pane</nome>
+        <prezzoAlChilo>120</prezzoAlChilo>
+        <quantità>100</quantità>
+    </scontrino>
+</storicoScontrini>
