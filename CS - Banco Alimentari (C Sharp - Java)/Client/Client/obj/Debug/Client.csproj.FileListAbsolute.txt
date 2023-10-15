@@ -1,0 +1,17 @@
+C:\Users\denni\OneDrive\Scuola\5° anno\Tecnologie\Laboratorio\Client Server\CS - Banco Alimentari (C Sharp - Java)\Client\Client\obj\Debug\Client.csproj.AssemblyReference.cache
+C:\Users\denni\OneDrive\Scuola\5° anno\Tecnologie\Laboratorio\Client Server\CS - Banco Alimentari (C Sharp - Java)\Client\Client\obj\Debug\FinestraCassiere.g.cs
+C:\Users\denni\OneDrive\Scuola\5° anno\Tecnologie\Laboratorio\Client Server\CS - Banco Alimentari (C Sharp - Java)\Client\Client\obj\Debug\MainWindow.g.cs
+C:\Users\denni\OneDrive\Scuola\5° anno\Tecnologie\Laboratorio\Client Server\CS - Banco Alimentari (C Sharp - Java)\Client\Client\obj\Debug\App.g.cs
+C:\Users\denni\OneDrive\Scuola\5° anno\Tecnologie\Laboratorio\Client Server\CS - Banco Alimentari (C Sharp - Java)\Client\Client\obj\Debug\Client_MarkupCompile.cache
+C:\Users\denni\OneDrive\Scuola\5° anno\Tecnologie\Laboratorio\Client Server\CS - Banco Alimentari (C Sharp - Java)\Client\Client\obj\Debug\Client_MarkupCompile.lref
+C:\Users\denni\OneDrive\Scuola\5° anno\Tecnologie\Laboratorio\Client Server\CS - Banco Alimentari (C Sharp - Java)\Client\Client\bin\Debug\Client.exe.config
+C:\Users\denni\OneDrive\Scuola\5° anno\Tecnologie\Laboratorio\Client Server\CS - Banco Alimentari (C Sharp - Java)\Client\Client\bin\Debug\Client.exe
+C:\Users\denni\OneDrive\Scuola\5° anno\Tecnologie\Laboratorio\Client Server\CS - Banco Alimentari (C Sharp - Java)\Client\Client\bin\Debug\Client.pdb
+C:\Users\denni\OneDrive\Scuola\5° anno\Tecnologie\Laboratorio\Client Server\CS - Banco Alimentari (C Sharp - Java)\Client\Client\obj\Debug\FinestraCassiere.baml
+C:\Users\denni\OneDrive\Scuola\5° anno\Tecnologie\Laboratorio\Client Server\CS - Banco Alimentari (C Sharp - Java)\Client\Client\obj\Debug\MainWindow.baml
+C:\Users\denni\OneDrive\Scuola\5° anno\Tecnologie\Laboratorio\Client Server\CS - Banco Alimentari (C Sharp - Java)\Client\Client\obj\Debug\Client.g.resources
+C:\Users\denni\OneDrive\Scuola\5° anno\Tecnologie\Laboratorio\Client Server\CS - Banco Alimentari (C Sharp - Java)\Client\Client\obj\Debug\Client.Properties.Resources.resources
+C:\Users\denni\OneDrive\Scuola\5° anno\Tecnologie\Laboratorio\Client Server\CS - Banco Alimentari (C Sharp - Java)\Client\Client\obj\Debug\Client.csproj.GenerateResource.cache
+C:\Users\denni\OneDrive\Scuola\5° anno\Tecnologie\Laboratorio\Client Server\CS - Banco Alimentari (C Sharp - Java)\Client\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+C:\Users\denni\OneDrive\Scuola\5° anno\Tecnologie\Laboratorio\Client Server\CS - Banco Alimentari (C Sharp - Java)\Client\Client\obj\Debug\Client.exe
+C:\Users\denni\OneDrive\Scuola\5° anno\Tecnologie\Laboratorio\Client Server\CS - Banco Alimentari (C Sharp - Java)\Client\Client\obj\Debug\Client.pdb

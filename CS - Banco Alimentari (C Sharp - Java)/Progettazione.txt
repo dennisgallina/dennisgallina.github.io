@@ -1,0 +1,40 @@
+Server
+ Classi:
+  - Cassa
+  - Cassiere
+  - Listino Prodotti
+  - MessaggioAlClient
+  - Prodotto
+  - RichiestaDelClient
+  - Scontrino
+  - Serializzatore
+  - Storico Scontrini
+
+ File XML:
+  - Listino Prodotti
+  - Storico Scontrini
+  - Cassieri
+
+Client
+ Classi:
+  - Cassa
+  - Cassiere
+  - Listino Prodotti
+  - MessaggioDalServer
+  - RichiestaAlServer
+  - Scontrino
+  - Deserializzatore
+
+Client -> Server
+start;
+open;idCassiere;nome
+insert;idCassiere;idProdotto;peso
+remove;idCassiere;idProdotto
+close;idCassiere;
+
+Client <- Server
+cassieri[];listinoProdotti - messaggio
+messaggio
+scontrino - messaggio
+scontrino - messaggio
+messaggio
