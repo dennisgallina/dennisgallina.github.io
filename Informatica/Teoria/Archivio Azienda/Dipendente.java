@@ -16,21 +16,24 @@ class Dipendente {
         this.nome = nome;
         this.residenza = residenza;
     }
+
+    public void visualizza() {
+        System.out.println(id + " " + dataDiNascita + " " +  dataDiAssunzione + " " + idUfficio + " " + cognome + " " + nome + " " + residenza);
+    }
     
     // Riporta i dati in una stringa col formato CSV
-    public String ToString() {
+    public String toCSV() {
         return "" + id + ";" + dataDiNascita + ";" +  dataDiAssunzione + ";" + idUfficio + ";" + cognome + ";" + nome + ";" + residenza;
     }
 
     // Riporta i dati in una stringa col formato Serialize PHP
-    public String ToSerializePHP() {
+    public String toSerializePHP() {
     StringBuilder datiToSerializePHP = new StringBuilder();
 
         // Inizia la serializzazione dell'oggetto Dipendente
         datiToSerializePHP.append("O:9:\"Dipendente\":7:{");
 
-        // Aggiungi i campi del Dipendente qui...
-        // Ad esempio, per un campo stringa "nome":
+        // Aggiungi i campi del Dipendente qui
         appendSerializedString(datiToSerializePHP, "nome", this.nome);
         appendSerializedString(datiToSerializePHP, "dataDiNascita", this.dataDiNascita);
         appendSerializedString(datiToSerializePHP, "dataDiAssunzione", this.dataDiAssunzione);

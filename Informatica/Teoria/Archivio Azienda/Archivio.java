@@ -4,63 +4,47 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Archivio {
-    File file; // File scritto in formato Serializa() PHP
-    GestioneDipendenti gestioneDipendenti;
-    GestioneUffici gestioneUffici;
+    File file; // File TXT scritto in formato Serialize PHP
+    GestioneUffici gestioneUffici; 
 
     public Archivio(String nomeFileArchivio) throws IOException {
         file = new File(nomeFileArchivio);
-        gestioneDipendenti = new GestioneDipendenti();
-        gestioneUffici = new GestioneUffici();
+        gestioneUffici = new GestioneUffici("Uffici.csv");
 
-        operazioniPreliminari(); // Operazioni all'avvio del programma
+        operazioniPreliminari(); 
     }
 
     private void operazioniPreliminari() throws IOException {
         if (!file.exists())
             file.createNewFile();
 
-        sincronizzaDati(); // Sincronizza i dati dei CSV con l'archivio
+        salvaComeSerializePHP(); // Scrive i dati in formato Serialize PHP 
     }
 
-    public void sincronizzaDati() throws IOException {
-        sincronizzaDipendenti();
-        sincronizzaUffici();
-    }
-
-    private void sincronizzaDipendenti() throws IOException {
+    // Scrive i dati in formato Serialize PHP 
+    private void salvaComeSerializePHP() throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter(file, true));
-        writer.write(gestioneDipendenti.ToSerializePHP());
+        writer.write(gestioneUffici.toSerializePHP()); // Scrive i dati Serializzati
+        writer.newLine();
         writer.close();
     }
 
-    private void sincronizzaUffici() throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter(file, true));
-        writer.write(gestioneUffici.ToSerializePHP());
-        writer.close();
-    }
-
-    // Aggiunge un dipendente
+    // Aggiunge un dipendente nel suo ufficio di appartenenza
     public boolean aggiungiDipendente(Dipendente dipendente) throws IOException {
-        if (!gestioneDipendenti.aggiungi(dipendente)) 
+        if (!gestioneUffici.aggiungiDipendente(dipendente)) // Se non riesce ad aggiungerlo
             return false;
 
-        sincronizzaDati();
+        salvaComeSerializePHP(); // Scrive i dati in formato Serialize PHP
         return true;
     }
 
     // Aggiungere un ufficio
     public boolean aggiungiUfficio(Ufficio ufficio) throws IOException {
-        if (!gestioneUffici.aggiungi(ufficio)) 
+        if (!gestioneUffici.aggiungi(ufficio)) // Se non riesce ad aggiungerlo
             return false;
 
-        sincronizzaDati();
+        salvaComeSerializePHP(); // Scrive i dati in formato Serialize PHP
         return true;
-    }
-
-    // Visualizza i dati dei dipendenti
-    public void visualizzaDipendenti() {
-        gestioneDipendenti.visualizzaDipendenti();
     }
 
     // Visualizza i dati degli uffici

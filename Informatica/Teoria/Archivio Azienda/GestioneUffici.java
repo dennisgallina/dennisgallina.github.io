@@ -5,47 +5,74 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.Map;
 
 public class GestioneUffici {
     File file; // File CSV
     HashMap<Integer, Ufficio> uffici; // Gestore locale
+    GestioneDipendenti gestioneDipendenti; // Gestore dei dipendenti negli uffici
 
-    public GestioneUffici() throws IOException {
-        file = new File("Uffici.csv");
+    public GestioneUffici(String fileName) throws IOException {
+        file = new File(fileName);
         uffici = new HashMap<>();
+        gestioneDipendenti = new GestioneDipendenti("Dipendenti.csv");
 
-        operazioniPreliminari(); // Operazioni alla creazione di una gestione
+        operazioniPreliminari(); 
     }
 
     private void operazioniPreliminari() throws IOException {
         if (!file.exists())
             file.createNewFile();
 
-        caricaDatiDaCSV(); // Importa i dati dal CSV
+        caricaDaCSV(); // Importa i dati dal File CSV
+        caricaDipendentiNegliUffici(); // Aggiunge i dipendenti nei rispettivi uffici
     }
 
-    public void caricaDatiDaCSV() throws IOException {
+    // Importa i dati dal File CSV
+    public void caricaDaCSV() throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
 
         String linea;
         while((linea = bufferedReader.readLine()) != null) {
             String datiSeparati[] = linea.split(";");
-            aggiungi(new Ufficio(Integer.parseInt(datiSeparati[0]), datiSeparati[1], Integer.parseInt(datiSeparati[2]), Integer.parseInt(datiSeparati[3]), datiSeparati[4], datiSeparati[5]));
+            aggiungiLocalmente(new Ufficio(Integer.parseInt(datiSeparati[0]), datiSeparati[1], Integer.parseInt(datiSeparati[2]), Integer.parseInt(datiSeparati[3]), datiSeparati[4], datiSeparati[5]));
         } 
-        
+
         bufferedReader.close();
     }
 
+    // Aggiunge i dipendenti nei rispettivi uffici
+    private void caricaDipendentiNegliUffici() {
+        for (Ufficio ufficio : uffici.values()) 
+            ufficio.dipendenti = gestioneDipendenti.getDipendentiDaUfficio(ufficio.id); 
+    }
+
+    // Aggiunge un ufficio e lo salva su CSV
     public boolean aggiungi(Ufficio ufficio) throws IOException {
-        if (verificaSeEsiste(ufficio.id))
+        if (!aggiungiLocalmente(ufficio)) // Se non riesce ad aggiungerlo
+            return false;
+
+        salvaSuCSV(ufficio);
+
+        return true;
+    }
+
+    // Aggiunge un ufficio localmente
+    private boolean aggiungiLocalmente(Ufficio ufficioDaAggiungere) {
+        if (verificaSeEsiste(ufficioDaAggiungere.id))
             return false;
         
-        uffici.put(ufficio.id, ufficio);
+        uffici.put(ufficioDaAggiungere.id, ufficioDaAggiungere);
 
-        aggiungiSuFileCSV(ufficio);
-        
         return true;
+    }
+
+    // Salva un ufficio su CSV
+    private void salvaSuCSV(Ufficio ufficioDaAggiungere) throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter(file, true));
+
+        writer.write(ufficioDaAggiungere.toCSV());
+        writer.newLine();
+        writer.close();
     }
 
     // Verifica l'esistenza di un ufficio
@@ -56,18 +83,32 @@ public class GestioneUffici {
             return false;
     }
 
-    public boolean aggiungiSuFileCSV(Ufficio ufficio) throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter(file, true));
+    public void visualizzaUffici() {
+        for (Ufficio ufficio : uffici.values()) {
+            ufficio.visualizza();
+            System.out.println();
+        } 
+    }
 
-        writer.write(ufficio.ToString()); 
-        writer.newLine();
-        writer.close();
+    public boolean aggiungiDipendente(Dipendente dipendenteDaAggiungere) throws IOException {
+        if (!uffici.containsKey(dipendenteDaAggiungere.idUfficio))
+            return false;
+
+        Ufficio ufficioRichiesto = uffici.get(dipendenteDaAggiungere.idUfficio);
         
+        if (ufficioRichiesto.dipendenti.containsKey(dipendenteDaAggiungere.id))
+            return false;
+
+        ufficioRichiesto.dipendenti.put(dipendenteDaAggiungere.id, dipendenteDaAggiungere);
+        uffici.put(ufficioRichiesto.id, ufficioRichiesto);
+
+        gestioneDipendenti.aggiungi(dipendenteDaAggiungere);
+
         return true;
     }
 
     // Riporta i dati in una stringa col formato Serialize PHP
-    public String ToSerializePHP() {
+    public String toSerializePHP() {
          StringBuilder datiToSerializePHP = new StringBuilder();
 
         // Inizia la serializzazione dell'array
@@ -75,25 +116,12 @@ public class GestioneUffici {
         datiToSerializePHP.append(uffici.size());
         datiToSerializePHP.append(":{");
 
-        for (Map.Entry<Integer, Ufficio> ufficio : uffici.entrySet()) {
-            // Serializza la chiave dell'array (ID del dipendente)
-            datiToSerializePHP.append("i:");
-            datiToSerializePHP.append(ufficio.getKey());
-            datiToSerializePHP.append(";");
-
-            // Utilizza il metodo ToSerializePHP() del Dipendente per serializzare l'oggetto
-            datiToSerializePHP.append(ufficio.getValue().ToSerializePHP());
-        }
+        for (Ufficio ufficio : uffici.values()) 
+            datiToSerializePHP.append(ufficio.toSerializePHP()); // Utilizza il metodo ToSerializePHP() del Dipendente per serializzare l'oggetto
 
         // Termina la serializzazione dell'array
         datiToSerializePHP.append("}");
 
         return datiToSerializePHP.toString();
-    }
-
-    public void visualizzaUffici() {
-        for (Ufficio ufficio : uffici.values()) {
-            System.out.println(ufficio.toString());
-        }
     }
 }
